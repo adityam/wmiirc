@@ -1,0 +1,35 @@
+import:
+  - display/desktop/xsetroot
+  - display/desktop/feh
+  - display/color/zenburn
+  - display/notice
+  - display/client
+  - display/tags
+  - display/status/music/mpd
+  - display/status/volume/amixer
+  - display/status/storage/df
+  - display/status/system/loadavg
+  - display/status/time
+  - control/mouse
+  - control/keyboard/dvorak
+
+prefer:
+  terminal: xterm
+  browser: chromium
+  editor: gvim
+  filer: thunar
+
+display:
+  bar: bottom
+  font: "-*-fixed-medium-r-*-*-18-*-*-*-*-*-*-*"
+  border: 5
+  column:
+    mode: default
+    rule: |
+      /.*/ -> 50+50
+  client:
+    - /\b(xconsole|alsamixer|XMMS|Sonata)\b/  : 1
+    - /^chrome:Chrome:Untitled/               : mail
+    - /^chrome:Chrome:Chromium Options$/      : '~'
+    - /^pidgin:|:WeeChat\b/                   : chat
+    - /Meld$/                                 : merge
