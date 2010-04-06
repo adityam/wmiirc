@@ -47,7 +47,7 @@ display:
 control:
   action:
     show_calendar:
-      launch *%w[wihack -type DIALOG xterm -e wyrd]
+      launch *%w[xterm -e wyrd], :type => DIALOG
       
 
 #script:
