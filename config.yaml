@@ -44,6 +44,10 @@ display:
         low:      25
         critical: 15
 
+    time:
+      refresh: 30
+      label: Time.now.strftime('%a %d %b %I:%M')
+
 control:
   action:
     show_calendar:
