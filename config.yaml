@@ -3,9 +3,6 @@ import:
   - display/color/personal
   - display/client
   - display/tags
-  - display/status/notice
-  - display/status/music/rhythmbox
-  - display/status/load
   - display/status/power
   - display/status/time
   - display/status/volume
@@ -27,11 +24,8 @@ prefer:
 
 
 display:
-
   font: "xft:DejaVuSans:pixelsize=13"
-
   bar: bottom
-
   column:
     mode: stack
     rule: |
@@ -40,43 +34,43 @@ display:
       /.*/ -> 50+50
 
   client:
-    - /\b(XMMS|xcalc)\b/                					: ~
-    - /\b(Gimp)\b/			                                : gimp
-    - /\b(Rhythmbox)\b/                                     : music
+    rule: |
+      /^XMMS:/ floating=on
+      /^xcalc:/ floating=on
+      /^gimp:/ tags=gimp
 
   status:
-    power:
-      battery: BAT0
-
-      label: |
-        sample!
-
-        if present?
-          if xmessage = message
-            system 'xkbbell -force'
-            dialog xmessage
-          end
-
-          status = case state
-            when 'charged' then "\u25CF"
-            when 'charging' then "\u26A1"
-            when 'discharging' then "\u25D2"
-            else '?'
-          end
-
-          [color, status, sprintf(
-            "%d%%",
-            [percent, 100].min
-          )]
-        end
-
-    volume:
-      mixer: Master
-
-    time:
-      refresh: 30
-      label: Time.now.strftime('%a %d %b %I:%M')
-
+#    power:
+#      battery: BAT0
+#
+#      label: |
+#        sample!
+#
+#        if present?
+#          if xmessage = message
+#            system 'xkbbell -force'
+#            dialog xmessage
+#          end
+#
+#          status = case state
+#            when 'charged' then "\u25CF"
+#            when 'charging' then "\u26A1"
+#            when 'discharging' then "\u25D2"
+#            else '?'
+#          end
+#
+#          [color, status, sprintf(
+#            "%d%%",
+#            [percent, 100].min
+#          )]
+#        end
+#
+#    volume:
+#      @mixer: Master
+#
+#    time:
+#      @format: %a %d %b %I:%M
+#      refresh: 30
 
 #script:
 #  after: focus_view "1:main"
