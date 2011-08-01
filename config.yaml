@@ -14,7 +14,7 @@ import:
   - control/keyboard/personal/launch
   - control/keyboard/personal/layout
   - control/keyboard/personal/move
-  - control/keyboard/qwerty/menu
+  - control/keyboard/personal/menu
 
 prefer:
   terminal: xterm
