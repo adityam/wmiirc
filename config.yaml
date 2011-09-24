@@ -39,6 +39,7 @@ display:
       /^XMMS:/ floating=on
       /^xcalc:/ floating=on
       /^gimp:/ tags=gimp
+      /^NX/ tags=netbook
 
   status:
     time:
