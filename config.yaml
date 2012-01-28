@@ -42,8 +42,8 @@ display:
       /^NX/ tags=netbook
 
   status:
-    time:
-      @format: %a %d %b %I:%M
+    time: 
+      '@format': '%a %d %b %I:%M'
       refresh: 30
 
 #script:
