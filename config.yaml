@@ -1,6 +1,6 @@
 import:
   - display/desktop/xsetroot
-  - display/color/personal
+  - display/color/solarized
   - display/client
   - display/tags
   - display/status/spacer
