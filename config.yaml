@@ -5,6 +5,7 @@ import:
   - display/tags
   - display/status/spacer
   - display/status/power
+  - display/status/dropbox
   - display/status/time
   - display/status/volume
   - control/mouse
@@ -30,17 +31,13 @@ display:
   column:
     mode: stack
     rule: |
-      /mail/ -> 75+25
+      /1/ -> 75+25
       /gimp/ -> 17+83+41
       /.*/ -> 50+50
 
   client:
-    rule: |
-      /^XMMS:/ floating=on
-      /^xcalc:/ floating=on
-      /^gimp:/ tags=gimp
-      /^NX/ tags=netbook
-
+    'tags=gimp':
+      - '^gimp:'
   status:
     time: 
       '@format': '%a %d %b %I:%M'

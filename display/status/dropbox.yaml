@@ -1,0 +1,18 @@
+import:
+  - display/status
+
+display:
+  status:
+    dropbox:
+      refresh: 60
+      
+      label: |
+        status = `dropbox status`.chomp
+        message = 
+          case status
+          when 'Idle' then [nil, 'Idle']
+          when "Dropbox isn't running!" then [:error, 'Not running']
+          else [:notice, status]
+          end
+        message.compact
+        
