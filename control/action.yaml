@@ -27,6 +27,10 @@ control:
       # kill the window manager only; do not touch the clients!
       fs.ctl.write 'quit'
 
+    lock: |
+      # lock the screen
+      system 'slock'
+
     quit: |
       # kill both clients and window manager
       action 'clear'
