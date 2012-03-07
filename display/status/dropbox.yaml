@@ -7,7 +7,7 @@ display:
       refresh: 60
       
       label: |
-        status = `dropbox status`.chomp
+        status = `dropbox status`.split.first
         message = 
           case status
           when 'Idle' then [nil, 'Idle']
